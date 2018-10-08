@@ -11,7 +11,7 @@ class Beers extends React.Component {
       // .then( res => this.setState({ beers: [ {id:1,name:'TestBeer'}, ...res.data.entries ] }) )
       .then( res => {
         this.setState({ beers: res.data.entries }) 
-      // debugger
+      // debugger // just to see how github shows modified lines
       })
   }
 
