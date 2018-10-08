@@ -7,16 +7,16 @@ class Beers extends React.Component {
 
   componentDidMount() {
     axios.get('/api/all_beers')
+      // Just to ensure that beers wont be empty
       // .then( res => this.setState({ beers: [ {id:1,name:'TestBeer'}, ...res.data.entries ] }) )
       .then( res => {
         this.setState({ beers: res.data.entries }) 
-      debugger
+      // debugger
       })
   }
 
   render() {
     const { beers } = this.state
-    debugger
     return (
       <div>
         {/* <h1 style='color:green'>Beer List</h1> */}
