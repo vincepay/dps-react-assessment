@@ -12,21 +12,7 @@ class Beers extends React.Component {
       // .then( res => this.setState({ beers: [ {id:1,name:'TestBeer'}, ...res.data.entries ] }) )
       .then( res => {
         this.setState({ beers: res.data.entries }) 
-        // this.setBeer(res)
       })
-  }
-
-  setBeer = (res) => this.setState({beers: res.data.entries})
-
-  showBeers = () => { 
-    const { beers } = this.state
-    return beers.map( b => (
-      <li key={b.id}>
-        <Link to={`/beers/${b.name}`} style={{color:'red'}}>
-          {b.name}
-        </Link>
-      </li>
-    ))
   }
 
   render() {
@@ -36,23 +22,18 @@ class Beers extends React.Component {
         {/* <h1 style='color:green'>Beer List</h1> */}
         <h1 style={{color:'red'}}>Beer List</h1>
         <ul>
-          {/* {this.showBeers()} */}
-          {
-            beers.map( b => (
+          { beers.map( b => (
               <li key={b.id}>
                 <Link to={`/beers/${b.name}`} style={{color:'red'}}>
-                  {b.name}
+                {b.name}
                 </Link>
               </li>
             ))
-
           }
         </ul>
       </div>
     )
   }
-
-
 }
 
 export default Beers
